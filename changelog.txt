@@ -1,0 +1,20 @@
+2024.11.02:
+* new: scripts: scripts standalone initialization and logging
+* changed: README_EN.txt: readme update
+
+2024.10.02:
+* new: scripts/.impl/cleanup_by_recent_list.bat: added ability to remove a directory
+* changed: README_EN.txt: readme update
+
+2024.10.02:
+* changed: project extracted from `contools` project
+
+===============================================================================
+
+2023.05.11:
+* new: Scripts/Tools/admin/RecentLists/cleanup_totalcmd.bat: added Total Commander recent lists cleanup
+* new: Scripts/Tools/admin/RecentLists/lists/README_EN.txt: lists format readme file
+* changed: Scripts/Tools/admin/RecentLists: minor improvements
+
+2023.02.08:
+* new: Scripts/Tools/admin/RecentLists: added scripts and pattern lists of registry keys to cleanup recent (file) lists in the windows registry for various applications
