@@ -1,4 +1,7 @@
 2024.11.02:
+* new: TODO.txt: extracted from `contools` project
+
+2024.11.02:
 * new: scripts: scripts standalone initialization and logging
 * changed: README_EN.txt: readme update
 
