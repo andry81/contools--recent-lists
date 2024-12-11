@@ -19,3 +19,20 @@ reg|*|HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDl
 reg|*|HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
 reg|*|HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRULegacy
 reg|*|HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU
+
+
+# <Storage>|...
+# reg|<CleanupMode>|<CleanupSubmode>|<NestLevel>|...
+# reg|m|*|1|<RegKeyPathPrefix>|<RegSubkeyRegexMatch>|<RegKeyPathSuffix>
+
+# cleanup for the rest users (just in case)
+
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache
+
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\CIDSizeMRU
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\FirstFolder
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRULegacy
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU

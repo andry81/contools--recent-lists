@@ -7,3 +7,14 @@
 reg|*|HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\DC\AVGeneral\cRecentFiles
 reg|*|HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\DC\AVGeneral\cRecentFolders
 reg|*|HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\DC\AVConnector\cIconCache
+
+
+# <Storage>|...
+# reg|<CleanupMode>|<CleanupSubmode>|<NestLevel>|...
+# reg|m|*|1|<RegKeyPathPrefix>|<RegSubkeyRegexMatch>|<RegKeyPathSuffix>
+
+# cleanup for the rest users
+
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Adobe\Acrobat Reader\DC\AVGeneral\cRecentFiles
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Adobe\Acrobat Reader\DC\AVGeneral\cRecentFolders
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Adobe\Acrobat Reader\DC\AVConnector\cIconCache

@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2024.11.02
+* 2024.12.12
 * contools--recent-lists
 
 1. DESCRIPTION
@@ -115,11 +115,11 @@ To cleanup all recent lists:
 
 1.2. reg|.|<RegKeyPath>|<RegKeyType>|<RegKeyName>
 
-  Cleanup a single key name with exact name match.
+  Cleanup a single key path with exact key name match.
 
 1.3. reg|n|<RegKeyPath>[\*]|<RegKeyType>|<RegKeyName>[*]
 
-  Cleanup multiple keys with path and name pattern match.
+  Cleanup multiple keys with path and name globbing pattern match.
 
   CAUTION:
     `n` pattern won't work if a value of the `<RegKeyName>` is too long.
@@ -129,15 +129,62 @@ To cleanup all recent lists:
 
 1.3.1 ...|<RegKeyPath>\*|<RegKeyType>|<RegKeyName>
 
-  Cleanup multiple key name with exact name match from key path recursively.
+  Cleanup multiple key paths with exact name match from key path recursively.
 
 1.3.2 ...|<RegKeyPath>|<RegKeyType>|<RegKeyName>*
 
-  Cleanup multiple key name with inexact name match by single key path.
+  Cleanup multiple key names with inexact name match by single key path.
 
 1.3.3 ...|<RegKeyPath>\*|<RegKeyType>|<RegKeyName>*
 
-  Cleanup multiple key name with inexact name match from key path recursively.
+  Cleanup multiple key names with inexact name match from key path recursively.
+
+1.4. reg|m|<NestLevel>|<CleanupSubmode>|...
+
+  Cleanup multiple keys with subkey path regex match (`findstr.exe`).
+
+  NOTE:
+    Currently only <NestLevel>=1 is supported.
+
+1.4.1 ...|*|1|<RegKeyPathPrefix>|<RegSubkeyRegexMatch>|<RegKeyPathSuffix>
+
+  Cleanup entire key path using match pattern:
+    <RegKeyPathPrefix>\<RegSubkeyRegexMatch>\<RegKeyPathSuffix>
+
+  NOTE:
+    If `<RegKeyPathSuffix>` is `.`, then treated as empty.
+
+  Example:
+    reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\MyApp\RecentList
+
+  Resulted path pattern:
+    HKEY_USERS\S-[0-9].*[0-9]\Software\MyApp\RecentList
+
+1.4.2 ...|.|1|<RegKeyPathPrefix>|<RegSubkeyRegexMatch>|<RegKeyPathSuffix>|<RegKeyType>|<RegKeyName>
+
+  Cleanup multiple key paths with exact key name and type match.
+
+  NOTE:
+    If `<RegKeyPathSuffix>` is `.`, then treated as empty.
+
+  Example:
+    reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\MyApp|REG_SZ|History
+
+  Resulted path pattern and key type:
+    HKEY_USERS\S-[0-9].*[0-9]\Software\MyApp\History, REG_SZ
+
+1.4.3 ...|n|1|<RegKeyPathPrefix>|<RegSubkeyRegexMatch>|<RegKeyPathSuffix>[\*]|<RegKeyType>|<RegKeyName>[*]
+
+  Cleanup multiple key paths with path and name globbing pattern match.
+
+  NOTE:
+    If `<RegKeyPathSuffix>` is `.`, then treated as empty.
+
+  Example:
+    reg|m|n|1|HKEY_USERS|S-[0-9].*[0-9]|Software\MyApp\*|REG_SZ|History*
+
+  Resulted path pattern and key type:
+    HKEY_USERS\S-[0-9].*[0-9]\Software\MyApp\*\History*, REG_SZ
 
 2. file|<Format>|...
 

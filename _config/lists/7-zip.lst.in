@@ -4,9 +4,19 @@
 # reg|<CleanupMode>|...
 # reg|.|<RegKeyPath>|<RegKeyType>|<RegKeyName>
 
-# CAUTION: `n` pattern won't work if a value of the `<RegKeyName>` is too long.
-
 reg|.|HKEY_CURRENT_USER\Software\7-Zip\Compression|REG_BINARY|ArcHistory
 reg|.|HKEY_CURRENT_USER\Software\7-Zip\Extraction|REG_BINARY|PathHistory
 reg|.|HKEY_CURRENT_USER\Software\7-Zip\FM|REG_BINARY|FolderHistory
 reg|.|HKEY_CURRENT_USER\Software\7-Zip\FM|REG_BINARY|CopyHistory
+
+
+# <Storage>|...
+# reg|<CleanupMode>|<CleanupSubmode>|<NestLevel>|...
+# reg|m|.|1|<RegKeyPathPrefix>|<RegSubkeyRegexMatch>|<RegKeyPathSuffix>|<RegKeyType>|<RegKeyName>
+
+# cleanup for the rest users
+
+reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\7-Zip\Compression|REG_BINARY|ArcHistory
+reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\7-Zip\Extraction|REG_BINARY|PathHistory
+reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\7-Zip\FM|REG_BINARY|FolderHistory
+reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\7-Zip\FM|REG_BINARY|CopyHistory

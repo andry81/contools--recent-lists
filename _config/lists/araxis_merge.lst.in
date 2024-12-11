@@ -9,3 +9,13 @@
 
 reg|n|HKEY_CURRENT_USER\Software\Araxis\Merge\*|REG_SZ|FolderComparisonHistory
 reg|n|HKEY_CURRENT_USER\Software\Araxis\Merge\*|REG_SZ|FileComparisonHistory
+
+
+# <Storage>|...
+# reg|<CleanupMode>|<CleanupSubmode>|<NestLevel>|...
+# reg|m|n|1|<RegKeyPathPrefix>|<RegSubkeyRegexMatch>|<RegKeyPathSuffix>[\*]|<RegKeyType>|<RegKeyName>[*]
+
+# cleanup for the rest users
+
+reg|m|n|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Araxis\Merge\*|REG_SZ|FolderComparisonHistory
+reg|m|n|1|HKEY_USERS|S-[0-9].*[0-9]|Software\Araxis\Merge\*|REG_SZ|FileComparisonHistory

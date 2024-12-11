@@ -6,3 +6,31 @@
 
 reg|.|HKEY_CURRENT_USER\Software\MPC-HC\MPC-HC\Settings|REG_SZ|SnapshotPath
 reg|.|HKEY_CURRENT_USER\Software\MPC-HC\MPC-HC\Settings|REG_SZ|LastSaveImagePath
+
+
+# <Storage>|...
+# reg|<CleanupMode>|...
+# reg|*|<RegKeyPath>
+
+reg|*|HKEY_CURRENT_USER\Software\MPC-HC\MPC-HC\MediaHistory
+reg|*|HKEY_CURRENT_USER\Software\MPC-HC\MPC-HC\PlaylistHistory
+
+
+# <Storage>|...
+# reg|<CleanupMode>|...
+# reg|n|<RegKeyPath>[\*]|<RegKeyType>|<RegKeyName>[*]
+
+# CAUTION: `<RegKeyName>` must be without whitespaces.
+# CAUTION: `n` pattern won't work if a value of the `<RegKeyName>` is too long.
+
+#reg|n|HKEY_...\...
+
+
+# <Storage>|...
+# reg|<CleanupMode>|<CleanupSubmode>|<NestLevel>|...
+# reg|m|*|1|<RegKeyPathPrefix>|<RegSubkeyRegexMatch>|<RegKeyPathSuffix>
+
+# cleanup for the rest users
+
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\MPC-HC\MPC-HC\MediaHistory
+reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\MPC-HC\MPC-HC\PlaylistHistory

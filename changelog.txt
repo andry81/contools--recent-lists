@@ -1,3 +1,8 @@
+2024.12.13:
+* new: scripts/.impl/cleanup_by_recent_list.bat: cleanup variant by additional subkey path regex (`findstr.exe`) pattern
+* changed: scripts/.impl/cleanup_by_recent_list.bat: minor improvement
+* changed: README_EN.txt: readme update
+
 2024.11.22:
 * changed: __init__/__init__.bat: switched to use `gen_config_dir.bat` script
 
