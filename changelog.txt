@@ -1,3 +1,7 @@
+2025.01.07:
+* new: README.md: markdown readme file
+* new: .github/FUNDING.yml: shared donate link
+
 2024.12.13:
 * new: scripts/.impl/cleanup_by_recent_list.bat: cleanup variant by additional subkey path regex (`findstr.exe`) pattern
 * changed: scripts/.impl/cleanup_by_recent_list.bat: minor improvement
