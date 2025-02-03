@@ -1,7 +1,9 @@
-> **Note** To checkout externals read the details here: https://github.com/andry81/externals
+> [!NOTE]
+> To checkout externals read the details here: https://github.com/andry81/externals
 
-<p align="center">Recent list scripts to:
-* Cleanup application recent lists.</p>
+<p align="center">Recent list scripts to:</p>
+
+* Cleanup application recent lists.
 
 <!-- -- >
 <p align="center">
