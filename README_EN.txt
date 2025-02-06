@@ -1,16 +1,18 @@
 * README_EN.txt
-* 2024.12.12
+* 2025.02.06
 * contools--recent-lists
 
 1. DESCRIPTION
-2. CATALOG CONTENT DESCRIPTION
-3. EXTERNALS
-4. USAGE
-4.1. Generate config files
-4.2. Edit generated config files
-4.3. Run cleanup scripts
-5. LIST FORMATS
-6. AUTHOR
+2. LICENSE
+3. REPOSITORIES
+4. CATALOG CONTENT DESCRIPTION
+5. EXTERNALS
+6. USAGE
+6.1. Generate config files
+6.2. Edit generated config files
+6.3. Run cleanup scripts
+7. LIST FORMATS
+8. AUTHOR
 
 -------------------------------------------------------------------------------
 1. DESCRIPTION
@@ -19,7 +21,26 @@ Recent list scripts to:
 * Cleanup application recent lists.
 
 -------------------------------------------------------------------------------
-2. CATALOG CONTENT DESCRIPTION
+2. LICENSE
+-------------------------------------------------------------------------------
+The MIT license (see included text file "license.txt" or
+https://en.wikipedia.org/wiki/MIT_License)
+
+-------------------------------------------------------------------------------
+3. REPOSITORIES
+-------------------------------------------------------------------------------
+Primary:
+  * https://github.com/andry81/contools--recent-lists/branches
+    https://github.com/andry81/contools--recent-lists.git
+First mirror:
+  * https://sf.net/p/contools/contools--recent-lists/ci/master/tree
+    https://git.code.sf.net/p/contools/contools--recent-lists
+Second mirror:
+  * https://gitlab.com/andry81/contools-recent-lists/-/branches
+    https://gitlab.com/andry81/contools-recent-lists.git
+
+-------------------------------------------------------------------------------
+4. CATALOG CONTENT DESCRIPTION
 -------------------------------------------------------------------------------
 
 <root>
@@ -60,18 +81,18 @@ Recent list scripts to:
      # Scripts.
 
 -------------------------------------------------------------------------------
-3. EXTERNALS
+5. EXTERNALS
 -------------------------------------------------------------------------------
 See details in `README_EN.txt` in `externals` project:
 
 https://github.com/andry81/externals
 
 -------------------------------------------------------------------------------
-4. USAGE
+6. USAGE
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
-4.1. Generate config files
+6.1. Generate config files
 -------------------------------------------------------------------------------
 
 Run:
@@ -80,7 +101,7 @@ Run:
   __init__/__init__.bat
 
 -------------------------------------------------------------------------------
-4.2. Edit generated config files
+6.2. Edit generated config files
 -------------------------------------------------------------------------------
 
 lists/*.lst
@@ -88,7 +109,7 @@ lists/*.ini
 config.0.vars
 
 -------------------------------------------------------------------------------
-4.3. Run cleanup scripts
+6.3. Run cleanup scripts
 -------------------------------------------------------------------------------
 
 To cleanup particular application recent list:
@@ -102,7 +123,7 @@ To cleanup all recent lists:
   scripts/_cleanup_all.bat
 
 -------------------------------------------------------------------------------
-5. LIST FORMATS
+7. LIST FORMATS
 -------------------------------------------------------------------------------
 
 <Storage>|...
@@ -208,6 +229,6 @@ CAUTION:
   `Total Commander` session.
 
 -------------------------------------------------------------------------------
-6. AUTHOR
+8. AUTHOR
 -------------------------------------------------------------------------------
 Andrey Dibrov (andry at inbox dot ru)
