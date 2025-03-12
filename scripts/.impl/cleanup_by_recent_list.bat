@@ -7,6 +7,9 @@ rem
 
 setlocal
 
+rem script names call stack
+if defined ?~ ( set "?~=%?~%-^>%~nx0" ) else if defined ?~nx0 ( set "?~=%?~nx0%-^>%~nx0" ) else set "?~=%~nx0"
+
 rem Under WOW64 (32-bit process in 64-bit Windows) restart script in 64-bit mode
 if "%PROCESSOR_ARCHITECTURE%" == "AMD64" goto X64
 if not defined PROCESSOR_ARCHITEW6432 goto X32
@@ -18,7 +21,7 @@ if exist "%SystemRoot%\System64\*" (
 )
 
 (
-  echo.%~nx0: error: run script in 64-bit console ONLY!
+  echo.%?~%: error: run script in 64-bit console ONLY!
   exit /b -254
 ) >&2
 
@@ -36,7 +39,7 @@ exit /b %LAST_ERROR%
 set "RECENT_LISTS_PTTN_FILE=%~1"
 
 if not exist "%RECENT_LISTS_PTTN_FILE%" (
-  echo.%~nx0: error: recent lists pattern file is not found: "%RECENT_LISTS_PTTN_FILE%"
+  echo.%?~%: error: recent lists pattern file is not found: "%RECENT_LISTS_PTTN_FILE%"
   exit /b 255
 ) >&2
 
@@ -447,7 +450,7 @@ echo."%RECENT_LIST_FILE_INI_PATH% | %RECENT_LIST_FILE_INI_CLEANUP_INI_FILE%"
 if not exist "%RECENT_LIST_FILE_INI_PATH%" exit /b 0
 
 "%SystemRoot%\System32\cscript.exe" /NOLOGO "%TACKLELIB_PROJECT_ROOT%/vbs/tacklelib/tools/totalcmd/uninstall_totalcmd_wincmd.vbs" "%RECENT_LIST_FILE_INI_PATH%" "%RECENT_LIST_FILE_INI_PATH%" "%RECENT_LIST_FILE_INI_CLEANUP_INI_FILE_PATH%" || (
-  echo.%~nx0: error: update of Total Commander main configuration file is aborted.
+  echo.%?~%: error: update of Total Commander main configuration file is aborted.
   exit /b 255
 ) >&2
 
@@ -471,19 +474,19 @@ rmdir%RECENT_LIST_CMD_RMDIR_ARGS% "%RECENT_LIST_CMD_RMDIR_EXPAND_PATH%"
 exit /b 0
 
 :CLEANUP_RECENT_LIST_REG_KEY_UNKNOWN
-echo.%~nx0: error: invalid registry record: "%RECENT_LIST_REG_KEY_RECORD%"
+echo.%?~%: error: invalid registry record: "%RECENT_LIST_REG_KEY_RECORD%"
 exit /b 0
 
 :CLEANUP_RECENT_LIST_FILE_RECORD_UNKNOWN
-echo.%~nx0: error: invalid file record: "%RECENT_LIST_FILE_RECORD%"
+echo.%?~%: error: invalid file record: "%RECENT_LIST_FILE_RECORD%"
 exit /b 0
 
 :CLEANUP_RECENT_LIST_CMD_RECORD_UNKNOWN
-echo.%~nx0: error: invalid command record: "%RECENT_LIST_CMD_RECORD%"
+echo.%?~%: error: invalid command record: "%RECENT_LIST_CMD_RECORD%"
 exit /b 0
 
 :CLEANUP_RECENT_LIST_UNKNOWN
-echo.%~nx0: error: invalid record: "%RECENT_LIST_RECORD%"
+echo.%?~%: error: invalid record: "%RECENT_LIST_RECORD%"
 exit /b 0
 
 :CMD
