@@ -13,4 +13,16 @@
 file|ini|*|%APPDATA%\GHISLER\wincmd.ini|totalcmd_wincmd_cleanup.ini
 file|ini|*|%COMMANDER_INI%|totalcmd_wincmd_cleanup.ini
 
+cmd|rmdir|%LOCALAPPDATA%\GHISLER\tcthumbs.db|/S /Q
+cmd|rmdir|%LOCALAPPDATA%\GHISLER\tcthumbs.idb|/S /Q
+cmd|rmdir|%LOCALAPPDATA%\GHISLER\tcDirFrq.txt|/S /Q
+
+cmd|rmdir|%APPDATA%\GHISLER\tcthumbs.db|/S /Q
+cmd|rmdir|%APPDATA%\GHISLER\tcthumbs.idb|/S /Q
+cmd|rmdir|%APPDATA%\GHISLER\tcDirFrq.txt|/S /Q
+
+cmd|rmdir|%COMMANDER_INI_PATH%\GHISLER\tcthumbs.db|/S /Q
+cmd|rmdir|%COMMANDER_INI_PATH%\GHISLER\tcthumbs.idb|/S /Q
+cmd|rmdir|%COMMANDER_INI_PATH%\GHISLER\tcDirFrq.txt|/S /Q
+
 cmd|rmdir|%TEMP%\_tc|/S /Q
