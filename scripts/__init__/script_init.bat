@@ -23,7 +23,7 @@ call "%%CONTOOLS_ROOT%%/std/declare_builtins.bat" %%* || exit /b
 
 rem check for true elevated environment
 call "%%CONTOOLS_ROOT%%/std/is_admin_elevated.bat" || (
-  echo.%?~%: error: the script process is not properly elevated up to Administrator privileges.
+  echo;%?~%: error: the script process is not properly elevated up to Administrator privileges.
   exit /b 255
 ) >&2
 
@@ -40,17 +40,17 @@ if exist "\\?\%SystemRoot%\System64\*" goto IGNORE_MKLINK_SYSTEM64
 call "%%CONTOOLS_ROOT%%/ToolAdaptors/lnk/install_system64_link.bat"
 
 if not exist "\\?\%SystemRoot%\System64\*" (
-  echo.%?~%: error: could not create directory link: "%SystemRoot%\System64" -^> "%SystemRoot%\System32"
+  echo;%?~%: error: could not create directory link: "%SystemRoot%\System64" -^> "%SystemRoot%\System32"
   exit /b 255
 ) >&2
 
-echo.
+echo;
 
 :IGNORE_MKLINK_SYSTEM64
 
 call "%%CONTOOLS_ROOT%%/std/get_cmdline.bat" %%*
 call "%%CONTOOLS_ROOT%%/std/echo_var.bat" RETURN_VALUE ">"
-echo.
+echo;
 
 rem The caller can continue after this exit.
 exit /b 0

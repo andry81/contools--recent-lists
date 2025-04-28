@@ -21,7 +21,7 @@ if exist "%SystemRoot%\System64\*" (
 )
 
 (
-  echo.%?~%: error: run script in 64-bit console ONLY!
+  echo;%?~%: error: run script in 64-bit console ONLY!
   exit /b -254
 ) >&2
 
@@ -39,7 +39,7 @@ exit /b %LAST_ERROR%
 set "RECENT_LISTS_PTTN_FILE=%~1"
 
 if not exist "%RECENT_LISTS_PTTN_FILE%" (
-  echo.%?~%: error: recent lists pattern file is not found: "%RECENT_LISTS_PTTN_FILE%"
+  echo;%?~%: error: recent lists pattern file is not found: "%RECENT_LISTS_PTTN_FILE%"
   exit /b 255
 ) >&2
 
@@ -137,7 +137,7 @@ for /F "usebackq eol=# tokens=1,* delims=|" %%i in ("%RECENT_LISTS_PTTN_FILE%") 
       ) else call :CLEANUP_RECENT_LIST_CMD_RECORD_UNKNOWN
     )
   ) else call :CLEANUP_RECENT_LIST_UNKNOWN
-  echo.---
+  echo;---
 )
 
 exit /b 0
@@ -146,7 +146,7 @@ rem delete existed key path
 :CLEANUP_RECENT_LIST_REG_KEY_ALL
 if not defined RECENT_LIST_REG_KEY_PATH goto CLEANUP_RECENT_LIST_REG_KEY_UNKNOWN
 
-echo."%RECENT_LIST_REG_KEY_PATH%"
+echo;"%RECENT_LIST_REG_KEY_PATH%"
 
 call :CMD_W_INDENT "%%SystemRoot%%\System32\reg.exe" query "%%RECENT_LIST_REG_KEY_PATH%%" && ^
 call :CMD_W_INDENT "%%SystemRoot%%\System32\reg.exe" delete "%%RECENT_LIST_REG_KEY_PATH%%" /f && ^
@@ -158,7 +158,7 @@ rem delete existed key name
 :CLEANUP_RECENT_LIST_REG_KEY_NAME
 if not defined RECENT_LIST_REG_KEY_NAME goto CLEANUP_RECENT_LIST_REG_KEY_UNKNOWN
 
-echo."%RECENT_LIST_REG_KEY_PATH% | %RECENT_LIST_REG_KEY_TYPE% | %RECENT_LIST_REG_KEY_NAME%"
+echo;"%RECENT_LIST_REG_KEY_PATH% | %RECENT_LIST_REG_KEY_TYPE% | %RECENT_LIST_REG_KEY_NAME%"
 
 call :CMD_W_INDENT "%%SystemRoot%%\System32\reg.exe" query "%%RECENT_LIST_REG_KEY_PATH%%" /v "%%RECENT_LIST_REG_KEY_NAME%%" && ^
 call :CMD_W_INDENT "%%SystemRoot%%\System32\reg.exe" add "%%RECENT_LIST_REG_KEY_PATH%%" /v "%%RECENT_LIST_REG_KEY_NAME%%" /t "%%RECENT_LIST_REG_KEY_TYPE%%" /f
@@ -191,7 +191,7 @@ if "%RECENT_LIST_REG_KEY_NAME_GLOB:~-1%" == "*" (
 
 set "RECENT_LIST_REG_KEY_SUBPATH=%RECENT_LIST_REG_KEY_PATH%"
 
-echo."%RECENT_LIST_REG_KEY_PATH_GLOB% | %RECENT_LIST_REG_KEY_TYPE% | %RECENT_LIST_REG_KEY_NAME_GLOB%"
+echo;"%RECENT_LIST_REG_KEY_PATH_GLOB% | %RECENT_LIST_REG_KEY_TYPE% | %RECENT_LIST_REG_KEY_NAME_GLOB%"
 
 call :CMD_ECHO_W_INDENT "%%SystemRoot%%\System32\reg.exe" query "%%RECENT_LIST_REG_KEY_PATH%%" %%REG_CMD_FIND_BARE_FLAG%% "%%RECENT_LIST_REG_KEY_NAME%%"%%REG_CMD_QUERY_BARE_FLAGS%%
 
@@ -270,7 +270,7 @@ if defined RECENT_LIST_REG_KEY_PATH_SUFFIX (
   set "RECENT_LIST_REG_KEY_PATH=%REGQUERY_LINE%\%RECENT_LIST_REG_KEY_PATH_SUFFIX%"
 ) else set "RECENT_LIST_REG_KEY_PATH=%REGQUERY_LINE%"
 
-echo."%RECENT_LIST_REG_KEY_PATH%"
+echo;"%RECENT_LIST_REG_KEY_PATH%"
 
 call :CMD_W_INDENT "%%SystemRoot%%\System32\reg.exe" query "%%RECENT_LIST_REG_KEY_PATH%%" && ^
 call :CMD_W_INDENT "%%SystemRoot%%\System32\reg.exe" delete "%%RECENT_LIST_REG_KEY_PATH%%" /f && ^
@@ -317,7 +317,7 @@ if defined RECENT_LIST_REG_KEY_PATH_SUFFIX (
   set "RECENT_LIST_REG_KEY_PATH=%REGQUERY_LINE%\%RECENT_LIST_REG_KEY_PATH_SUFFIX%"
 ) else set "RECENT_LIST_REG_KEY_PATH=%REGQUERY_LINE%"
 
-echo."%RECENT_LIST_REG_KEY_PATH% | %RECENT_LIST_REG_KEY_TYPE% | %RECENT_LIST_REG_KEY_NAME%"
+echo;"%RECENT_LIST_REG_KEY_PATH% | %RECENT_LIST_REG_KEY_TYPE% | %RECENT_LIST_REG_KEY_NAME%"
 
 call :CMD_W_INDENT "%%SystemRoot%%\System32\reg.exe" query "%%RECENT_LIST_REG_KEY_PATH%%" /v "%%RECENT_LIST_REG_KEY_NAME%%" && ^
 call :CMD_W_INDENT "%%SystemRoot%%\System32\reg.exe" add "%%RECENT_LIST_REG_KEY_PATH%%" /v "%%RECENT_LIST_REG_KEY_NAME%%" /t "%%RECENT_LIST_REG_KEY_TYPE%%" /f
@@ -393,7 +393,7 @@ if defined RECENT_LIST_REG_KEY_PATH_SUFFIX (
 
 set "RECENT_LIST_REG_KEY_SUBPATH=%RECENT_LIST_REG_KEY_PATH%"
 
-echo."%RECENT_LIST_REG_KEY_PATH_GLOB% | %RECENT_LIST_REG_KEY_TYPE% | %RECENT_LIST_REG_KEY_NAME_GLOB%"
+echo;"%RECENT_LIST_REG_KEY_PATH_GLOB% | %RECENT_LIST_REG_KEY_TYPE% | %RECENT_LIST_REG_KEY_NAME_GLOB%"
 
 rem CAUTION:
 rem   1. If a variable is empty, then it would not be expanded in the `cmd.exe`
@@ -445,12 +445,12 @@ if not exist "%RECENT_LIST_FILE_INI_CLEANUP_INI_FILE_PATH%" goto CLEANUP_RECENT_
 rem expand path
 call set "RECENT_LIST_FILE_INI_PATH=%RECENT_LIST_FILE_INI_EXPAND_PATH%"
 
-echo."%RECENT_LIST_FILE_INI_PATH% | %RECENT_LIST_FILE_INI_CLEANUP_INI_FILE%"
+echo;"%RECENT_LIST_FILE_INI_PATH% | %RECENT_LIST_FILE_INI_CLEANUP_INI_FILE%"
 
 if not exist "%RECENT_LIST_FILE_INI_PATH%" exit /b 0
 
 "%SystemRoot%\System32\cscript.exe" /NOLOGO "%TACKLELIB_PROJECT_ROOT%/vbs/tacklelib/tools/totalcmd/uninstall_totalcmd_wincmd.vbs" "%RECENT_LIST_FILE_INI_PATH%" "%RECENT_LIST_FILE_INI_PATH%" "%RECENT_LIST_FILE_INI_CLEANUP_INI_FILE_PATH%" || (
-  echo.%?~%: error: update of Total Commander main configuration file is aborted.
+  echo;%?~%: error: update of Total Commander main configuration file is aborted.
   exit /b 255
 ) >&2
 
@@ -468,30 +468,42 @@ if not "%RECENT_LIST_CMD_RMDIR_ARGS:~0,1%" == " " set "RECENT_LIST_CMD_RMDIR_ARG
 
 :RECENT_LIST_CMD_RMDIR_ARGS_NOT_DEFINED
 
-echo.^>rmdir%RECENT_LIST_CMD_RMDIR_ARGS% "%RECENT_LIST_CMD_RMDIR_EXPAND_PATH%"
-rmdir%RECENT_LIST_CMD_RMDIR_ARGS% "%RECENT_LIST_CMD_RMDIR_EXPAND_PATH%"
+if not defined RECENT_LIST_CMD_RMDIR_EXPAND_PATH (
+  call :CLEANUP_RECENT_LIST_CMD_RECORD_UNKNOWN
+  exit /b 255
+) >&2
+
+set "RECENT_LIST_CMD_RMDIR_EXPAND_PATH=%RECENT_LIST_CMD_RMDIR_EXPAND_PATH:/=\%"
+
+if "%RECENT_LIST_CMD_RMDIR_EXPAND_PATH:~0,1%" == "\" (
+  echo;%?~%: error: invalid path to remove directory: "%RECENT_LIST_CMD_RMDIR_EXPAND_PATH%".
+  exit /b 255
+) >&2
+
+echo;^>rmdir%RECENT_LIST_CMD_RMDIR_ARGS% "%RECENT_LIST_CMD_RMDIR_EXPAND_PATH%"
+rmdir%RECENT_LIST_CMD_RMDIR_ARGS% "%RECENT_LIST_CMD_RMDIR_EXPAND_PATH%" || exit /b
 
 exit /b 0
 
 :CLEANUP_RECENT_LIST_REG_KEY_UNKNOWN
-echo.%?~%: error: invalid registry record: "%RECENT_LIST_REG_KEY_RECORD%"
+echo;%?~%: error: invalid registry record: "%RECENT_LIST_REG_KEY_RECORD%"
 exit /b 0
 
 :CLEANUP_RECENT_LIST_FILE_RECORD_UNKNOWN
-echo.%?~%: error: invalid file record: "%RECENT_LIST_FILE_RECORD%"
+echo;%?~%: error: invalid file record: "%RECENT_LIST_FILE_RECORD%"
 exit /b 0
 
 :CLEANUP_RECENT_LIST_CMD_RECORD_UNKNOWN
-echo.%?~%: error: invalid command record: "%RECENT_LIST_CMD_RECORD%"
+echo;%?~%: error: invalid command record: "%RECENT_LIST_CMD_RECORD%"
 exit /b 0
 
 :CLEANUP_RECENT_LIST_UNKNOWN
-echo.%?~%: error: invalid record: "%RECENT_LIST_RECORD%"
+echo;%?~%: error: invalid record: "%RECENT_LIST_RECORD%"
 exit /b 0
 
 :CMD
-echo.^>%*
-echo.
+echo;^>%*
+echo;
 (
   %*
 )
@@ -499,16 +511,16 @@ exit /b
 
 :CMD_W_INDENT
 call :CMD_ECHO_W_INDENT %%*
-echo.
+echo;
 (
   %*
 )
 exit /b
 
 :CMD_ECHO
-echo.^>%*
+echo;^>%*
 exit /b
 
 :CMD_ECHO_W_INDENT
-echo.%CMD_INDENT_STR%^>%*
+echo;%CMD_INDENT_STR%^>%*
 exit /b
