@@ -8,6 +8,8 @@ reg|.|HKEY_CURRENT_USER\Software\7-Zip\Compression|REG_BINARY|ArcHistory
 reg|.|HKEY_CURRENT_USER\Software\7-Zip\Extraction|REG_BINARY|PathHistory
 reg|.|HKEY_CURRENT_USER\Software\7-Zip\FM|REG_BINARY|FolderHistory
 reg|.|HKEY_CURRENT_USER\Software\7-Zip\FM|REG_BINARY|CopyHistory
+reg|.|HKEY_CURRENT_USER\Software\7-Zip\FM|REG_SZ|PanelPath0
+reg|.|HKEY_CURRENT_USER\Software\7-Zip\FM|REG_SZ|PanelPath1
 
 
 # <Storage>|...
@@ -20,3 +22,5 @@ reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\7-Zip\Compression|REG_BINARY|ArcHis
 reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\7-Zip\Extraction|REG_BINARY|PathHistory
 reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\7-Zip\FM|REG_BINARY|FolderHistory
 reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\7-Zip\FM|REG_BINARY|CopyHistory
+reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\7-Zip\FM|REG_SZ|PanelPath0
+reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\7-Zip\FM|REG_SZ|PanelPath1

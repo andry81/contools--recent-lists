@@ -7,7 +7,7 @@
 
 reg|*|HKEY_CURRENT_USER\Software\WinRAR\ArcHistory
 reg|*|HKEY_CURRENT_USER\Software\WinRAR\DialogEditHistory\ExtrPath
-reg|.|HKEY_CURRENT_USER\Software\WinRAR\General|REG_BINARY|LastFolder
+reg|.|HKEY_CURRENT_USER\Software\WinRAR\General|REG_SZ|LastFolder
 
 
 # <Storage>|...
@@ -19,4 +19,4 @@ reg|.|HKEY_CURRENT_USER\Software\WinRAR\General|REG_BINARY|LastFolder
 
 reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|Software\WinRAR\ArcHistory
 reg|m|*|1|HKEY_USERS|S-[0-9].*[0-9]|WinRAR\DialogEditHistory\ExtrPath
-reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\WinRAR\General|REG_BINARY|LastFolder
+reg|m|.|1|HKEY_USERS|S-[0-9].*[0-9]|Software\WinRAR\General|REG_SZ|LastFolder

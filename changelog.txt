@@ -1,4 +1,8 @@
 2025.05.06:
+* fixed: _config/lists/winrar.lst.in: wrong registry key types
+* changed: _config/lists/7-zip.lst.in: more cleanup registry keys
+
+2025.05.06:
 * new: _config/lists/winrar.lst.in, scripts/cleanup_winrar.bat: WinRAR cleanup list and script
 * changed: scripts/.impl/cleanup_by_recent_list.bat: print the end of a command output as an indented `<` character
 
