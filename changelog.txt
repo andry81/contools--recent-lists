@@ -1,3 +1,7 @@
+2025.05.06:
+* new: _config/lists/winrar.lst.in, scripts/cleanup_winrar.bat: WinRAR cleanup list and script
+* changed: scripts/.impl/cleanup_by_recent_list.bat: print the end of a command output as an indented `<` character
+
 2025.04.28:
 * changed: global code improvement: `echo.` -> `echo;`, based on "Different `echo?...` variants" : https://github.com/andry81/contools/discussions/22
 

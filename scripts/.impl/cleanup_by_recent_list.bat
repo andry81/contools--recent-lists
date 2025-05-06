@@ -215,7 +215,11 @@ for /f "usebackq tokens=* delims="eol^= %%i in (`%%?.%%`) do (
   )
 )
 
-exit /b
+set LAST_ERROR=%ERRORLEVEL%
+
+call :CMDEND_ECHO_W_INDENT
+
+exit /b %LAST_ERROR%
 
 :CLEANUP_RECENT_LIST_REG_KEY_NAME_GLOB_IMPL
 if "%REGQUERY_LINE:~0,5%" == "HKEY_" set "RECENT_LIST_REG_KEY_SUBPATH=%REGQUERY_LINE%"
@@ -417,7 +421,11 @@ for /f "usebackq tokens=* delims="eol^= %%i in (`@%%?.%%`) do (
   )
 )
 
-exit /b
+set LAST_ERROR=%ERRORLEVEL%
+
+call :CMDEND_ECHO_W_INDENT
+
+exit /b %LAST_ERROR%
 
 :CLEANUP_RECENT_LIST_REG_KEY_NAME_RE1_GLOB_IMPL2
 if "%REGQUERY_LINE:~0,5%" == "HKEY_" set "RECENT_LIST_REG_KEY_SUBPATH=%REGQUERY_LINE%"
@@ -515,12 +523,16 @@ echo;
 (
   %*
 )
-exit /b
+set LAST_ERROR=%ERRORLEVEL%
 
-:CMD_ECHO
-echo;^>%*
-exit /b
+call :CMDEND_ECHO_W_INDENT
+
+exit /b %LAST_ERROR%
 
 :CMD_ECHO_W_INDENT
 echo;%CMD_INDENT_STR%^>%*
+exit /b
+
+:CMDEND_ECHO_W_INDENT
+echo;%CMD_INDENT_STR%^<%*
 exit /b
