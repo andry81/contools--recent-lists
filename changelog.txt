@@ -1,3 +1,6 @@
+2025.06.25:
+* refactor: global directories rename to lower case name
+
 2025.05.06:
 * fixed: _config/lists/winrar.lst.in: wrong registry key types
 * changed: _config/lists/7-zip.lst.in: more cleanup registry keys
