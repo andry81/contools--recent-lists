@@ -2,7 +2,22 @@
 
   Add Notepad++ recent lists cleanup.
 
-  c:\Users\User\AppData\Roaming\Notepad++\config.xml
+  %APPDATA%\Notepad++\config.xml
 
   NotepadPlus/FindHistory
   NotepadPlus/History
+
+  Add Visual Studio recent lists cleanup
+
+  %LOCALAPPDATA%\Microsoft\VisualStudio\vshub\SettingsV2\SharedSettings.v1.sqlite
+
+    Table: Settings
+    Name:  CodeContainers.Offline
+
+  %LOCALAPPDATA%\Microsoft\VisualStudio\16.0_e3b453fa\ApplicationPrivateSettings.xml
+ 
+    XPath: content/indexed/collection[@name="CodeContainers.Offline"]/value[@name="value"]
+
+  %LOCALAPPDATA%\Microsoft\VisualStudio\SettingsLogs
+
+    "CodeContainers.Offline" records
