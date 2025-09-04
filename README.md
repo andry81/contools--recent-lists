@@ -3,7 +3,7 @@
 
 <p align="center">Recent list scripts to:</p>
 
-* Cleanup application recent lists.
+* Cleanup application recent lists or MRU (most recently used) files and items in applications.
 
 <!-- -- >
 <p align="center">

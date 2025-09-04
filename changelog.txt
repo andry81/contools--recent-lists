@@ -1,4 +1,7 @@
 2025.09.04:
+* changed: README*.*: details for search engines
+
+2025.09.04:
 * changed: TODO.txt: todo update
 
 2025.07.07:

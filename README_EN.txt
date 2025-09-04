@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2025.02.06
+* 2025.09.04
 * contools--recent-lists
 
 1. DESCRIPTION
@@ -18,7 +18,8 @@
 1. DESCRIPTION
 -------------------------------------------------------------------------------
 Recent list scripts to:
-* Cleanup application recent lists.
+* Cleanup application recent lists or MRU (most recently used) files and items
+  in applications.
 
 -------------------------------------------------------------------------------
 2. LICENSE
