@@ -18,7 +18,6 @@ repositories:
       - scripts/tools/xcopy
       - scripts/tools/ToolAdaptors/__init__
       - scripts/tools/ToolAdaptors/lnk
-      - tools
 
   _externals/contools--utils:
     type:         git

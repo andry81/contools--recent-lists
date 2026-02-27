@@ -1,3 +1,7 @@
+2026.02.27:
+* changed: __init__.bat: minor refactor
+* changed: .externals: update to the latest
+
 2025.10.16:
 * changed: TODO.txt: todo update
 
