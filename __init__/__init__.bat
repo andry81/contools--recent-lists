@@ -65,7 +65,7 @@ if not defined LOAD_CONFIG_VERBOSE if %INIT_VERBOSE%0 NEQ 0 set LOAD_CONFIG_VERB
 if %NO_GEN%0 EQU 0 (
   call "%%CONTOOLS_BUILD_TOOLS_ROOT%%/load_config_dir.bat" -+ %%* -gen_user_config -- "%%CONTOOLS_RECENT_LISTS_PROJECT_INPUT_CONFIG_ROOT%%" "%%CONTOOLS_RECENT_LISTS_PROJECT_OUTPUT_CONFIG_ROOT%%" || exit /b
 
-  call "%%CONTOOLS_BUILD_TOOLS_ROOT%%/gen_config_dir.bat" -if_notexist "%%CONTOOLS_RECENT_LISTS_PROJECT_INPUT_CONFIG_ROOT%%/lists" "%%CONTOOLS_RECENT_LISTS_PROJECT_OUTPUT_CONFIG_ROOT%%/lists" *.lst *.ini || exit /b
+  call "%%CONTOOLS_BUILD_TOOLS_ROOT%%/gen_config_dir.bat" -+ -if_notexist -- "%%CONTOOLS_RECENT_LISTS_PROJECT_INPUT_CONFIG_ROOT%%/lists" "%%CONTOOLS_RECENT_LISTS_PROJECT_OUTPUT_CONFIG_ROOT%%/lists" *.lst *.ini || exit /b
 ) else call "%%CONTOOLS_BUILD_TOOLS_ROOT%%/load_config_dir.bat" -+ %%* -- "%%CONTOOLS_RECENT_LISTS_PROJECT_INPUT_CONFIG_ROOT%%" "%%CONTOOLS_RECENT_LISTS_PROJECT_OUTPUT_CONFIG_ROOT%%" || exit /b
 
 if %NO_GEN%0 EQU 0 (
