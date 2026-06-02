@@ -1,5 +1,5 @@
 * README_EN.txt
-* 2025.09.04
+* 2026.06.02
 * contools--recent-lists
 
 1. DESCRIPTION
@@ -7,12 +7,13 @@
 3. REPOSITORIES
 4. CATALOG CONTENT DESCRIPTION
 5. EXTERNALS
-6. USAGE
-6.1. Generate config files
-6.2. Edit generated config files
-6.3. Run cleanup scripts
-7. LIST FORMATS
-8. AUTHOR
+6. DEPLOY
+7. USAGE
+7.1. Generate config files
+7.2. Edit generated config files
+7.3. Run cleanup scripts
+8. LIST FORMATS
+9. AUTHOR
 
 -------------------------------------------------------------------------------
 1. DESCRIPTION
@@ -51,6 +52,11 @@ Second mirror:
  |    # Log files directory, where does store all log files from all scripts
  |    # including all nested projects.
  |
+ +- /`_externals`
+ |    #
+ |    # Immediate external projects catalog which could not be moved into the
+ |    # 3dparty dependencies catalog.
+ |
  +- /`_config`
  |    #
  |    # Directory with input configuration files.
@@ -77,9 +83,9 @@ Second mirror:
  |            #
  |            # Scripts environment variables.
  |
- +- `/scripts/*.bat`
-     #
-     # Scripts.
+ +- /`scripts`
+      #
+      # Scripts.
 
 -------------------------------------------------------------------------------
 5. EXTERNALS
@@ -89,11 +95,21 @@ See details in `README_EN.txt` in `externals` project:
 https://github.com/andry81/externals
 
 -------------------------------------------------------------------------------
-6. USAGE
+6. DEPLOY
+-------------------------------------------------------------------------------
+Before use the project you have to deploy some files from it.
+
+1. To run specific Windows Shell scripts (`.bat` file extension) you should run
+   the installation script:
+
+* /_install.bat`
+
+-------------------------------------------------------------------------------
+7. USAGE
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
-6.1. Generate config files
+7.1. Generate config files
 -------------------------------------------------------------------------------
 
 Run:
@@ -102,7 +118,7 @@ Run:
   __init__/__init__.bat
 
 -------------------------------------------------------------------------------
-6.2. Edit generated config files
+7.2. Edit generated config files
 -------------------------------------------------------------------------------
 
 lists/*.lst
@@ -110,7 +126,7 @@ lists/*.ini
 config.0.vars
 
 -------------------------------------------------------------------------------
-6.3. Run cleanup scripts
+7.3. Run cleanup scripts
 -------------------------------------------------------------------------------
 
 To cleanup particular application recent list:
@@ -124,7 +140,7 @@ To cleanup all recent lists:
   scripts/_cleanup_all.bat
 
 -------------------------------------------------------------------------------
-7. LIST FORMATS
+8. LIST FORMATS
 -------------------------------------------------------------------------------
 
 <Storage>|...
@@ -230,6 +246,6 @@ CAUTION:
   `Total Commander` session.
 
 -------------------------------------------------------------------------------
-8. AUTHOR
+9. AUTHOR
 -------------------------------------------------------------------------------
 Andrey Dibrov (andry at inbox dot ru)

@@ -1,23 +1,34 @@
 repositories:
 
+  _externals/contools--admin:
+    type:         git
+    url:          https://github.com/andry81/contools--admin
+    version:      master
+    subpaths:
+      - __init__
+      - _config
+      - scripts/__init__
+      - scripts/Windows/__init__
+      - scripts/Windows/Perm
+
   _externals/contools:
     type:         git
     url:          https://github.com/andry81/contools
     version:      master
     subpaths:
+      - ._install
       - __init__
       - _config
       - scripts/__init__
       - scripts/tools/__init__
       - scripts/tools/build
       - scripts/tools/cleanup
+      - scripts/tools/encoding
       - scripts/tools/exec
       - scripts/tools/registry
       - scripts/tools/std
       - scripts/tools/wmi
       - scripts/tools/xcopy
-      - scripts/tools/ToolAdaptors/__init__
-      - scripts/tools/ToolAdaptors/lnk
 
   _externals/contools--utils:
     type:         git

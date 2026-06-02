@@ -76,4 +76,15 @@ if %NO_CHCP%0 EQU 0 (
   if defined CHCP call "%%CONTOOLS_ROOT%%/std/chcp.bat" %%CHCP%%
 )
 
+rem installation checks
+
+if %CONTOOLS_PROJECT_INSTALL%0 NEQ 0 goto IGNORE_CONTOOLS_PROJECT_INSTALLATION_CHECK
+
+if not exist "\\?\%SystemRoot%\System64\*" (
+  echo;%~nx0: error: directory is not installed: "%SystemRoot%\System64"
+  exit /b 255
+) >&2
+
+:IGNORE_CONTOOLS_PROJECT_INSTALLATION_CHECK
+
 exit /b 0

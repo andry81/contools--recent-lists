@@ -1,3 +1,9 @@
+2026.06.02:
+* new: _install.bat, ._install: explicit installation script
+* changed: scripts/__init__/script_init.bat: removed dropped dependency script
+* changed: .externals: new dependencies
+* changed: README_EN.txt: readme update
+
 2026.03.10:
 * changed: __init__: minor improvement
 
