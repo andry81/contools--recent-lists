@@ -1,3 +1,6 @@
+2026.06.06:
+* changed: __init__/__init__.bat, ._install/__init__.bat: code cleanup
+
 2026.06.02:
 * new: _install.bat, ._install: explicit installation script
 * changed: scripts/__init__/script_init.bat: removed dropped dependency script
