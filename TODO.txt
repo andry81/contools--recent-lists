@@ -7,6 +7,8 @@
   NotepadPlus/FindHistory
   NotepadPlus/History
 
+  ---
+
   Add Visual Studio recent lists cleanup
 
   %LOCALAPPDATA%\Microsoft\VisualStudio\vshub\SettingsV2\SharedSettings.v1.sqlite
@@ -22,7 +24,17 @@
 
     "CodeContainers.Offline" records
 
+  ---
+
   Add Event Log cleanup
 
   Microsoft-Windows-VHDMP/Operational
   %SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-VHDMP%4Operational.evtx
+
+  ---
+
+  Cleanup wincmd.ini following redirection links:
+
+    RedirectSection=...
+
+  For details: https://www.ghisler.ch/board/viewtopic.php?p=450294#p450294
