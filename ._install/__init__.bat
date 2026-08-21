@@ -13,6 +13,6 @@ call "%%CONTOOLS_ROOT%%/std/canonical_path_if_ndef.bat" CONTOOLS_ADMIN_PROJECT_E
 rem init external projects
 
 call "%%CONTOOLS_ROOT%%/std/call_if_exist.bat" ^
-"%%CONTOOLS_RECENT_LISTS_PROJECT_EXTERNALS_ROOT%%/contools--admin/__init__/__init__.bat" %%* || exit /b
+  "%%CONTOOLS_RECENT_LISTS_PROJECT_EXTERNALS_ROOT%%/contools--admin/__init__/__init__.bat" %%* || exit /b
 
 exit /b 0

@@ -47,7 +47,7 @@ if exist "%CONTOOLS_RECENT_LISTS_PROJECT_EXTERNALS_ROOT%/contools/__init__/__ini
 rem init external projects
 
 call "%%CONTOOLS_ROOT%%/std/call_if_exist.bat" ^
-"%%CONTOOLS_RECENT_LISTS_PROJECT_EXTERNALS_ROOT%%/tacklelib/__init__/__init__.bat" -no_load_user_config || exit /b
+  "%%CONTOOLS_RECENT_LISTS_PROJECT_EXTERNALS_ROOT%%/tacklelib/__init__/__init__.bat" -no_load_user_config || exit /b
 
 if %NO_GEN%0 EQU 0 (
   call "%%CONTOOLS_BUILD_TOOLS_ROOT%%/mkdir_if_notexist.bat" "%%CONTOOLS_RECENT_LISTS_PROJECT_OUTPUT_CONFIG_ROOT%%/lists" || exit /b
